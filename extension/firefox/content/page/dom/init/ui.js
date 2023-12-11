@@ -25,19 +25,19 @@ function StepDescription(child) {
       span({ class: 'index' }),
       child,
     ),
-    button({ class: 'text-button delete-button', 'wtc-editor': 1 }, 'Remove step'),
+    button({ class: 'text-button delete-button', 'wtc-editor': 1 }, 'Schritt entfernen'),
   );
 }
 
 export function StartingStep({ url }) {
   return div({ class: 'step', 'wtc-step-index': 1 },
-    StepDescription(span({ class: 'content' }, ['Visit ', a({ href: url }, url), '.']))
+    StepDescription(span({ class: 'content' }, ['Öffne ', a({ href: url }, url), '.']))
   );
 }
 
 export function BackNavigationStep({ url, index }) {
   return div({ class: 'step', 'wtc-step-index': index },
-    StepDescription(span({ class: 'content' }, ['Go back to ', a({ href: url }, url), '.']))
+    StepDescription(span({ class: 'content' }, ['Gehe zurück zu ', a({ href: url }, url), '.']))
   );
 }
 
@@ -47,7 +47,7 @@ export function ScreenshotStep({ image, offset, size, target }, index) {
   return div({ class: 'step', 'wtc-step-index': index + 2 },
     StepDescription(
       textarea({ class: 'content', 'wtc-textarea': 0 },
-        `Click "${target.innerText}" ${actionDescription}.`
+        `Klicke auf "${target.innerText}" ${actionDescription}.`
       ),
     ),
     div({ class: 'step-image' },
